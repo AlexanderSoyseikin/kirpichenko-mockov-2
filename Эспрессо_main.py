@@ -16,14 +16,10 @@ def main():
             cur = con.cursor()
             result = cur.execute("""SELECT * FROM coffee""").fetchall()
             con.close()
-            print(result)
             self.tableWidget.setColumnCount(7)
-            print(1)
             self.tableWidget.setRowCount(len(result))
-            print(1)
             for i in range(len(result)):
                 for j in range(len(result[i])):
-                    print(1)
                     self.tableWidget.setItem(int(i), int(j), QtWidgets.QTableWidgetItem(result[i][j]))
 
     if __name__ == '__main__':
